@@ -1,0 +1,21 @@
+{
+    "name": "product-manager-backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon --exec ts-node src/index.ts"
+    },
+    "keywords": [],
+    "author": "Omar Obregon",
+    "license": "ISC",
+    "description": "product manager with express & typescript",
+    "devDependencies": {
+        "@types/express": "^4.17.21",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.3"
+    },
+    "dependencies": {
+        "express": "^4.19.2"
+    }
+}
