@@ -113,7 +113,7 @@ describe('PUT /api/products/:id', () => {
             .send({
                 name: 'Monitor Curvo Actualizado',
                 price: 350,
-                availability: false,
+                availability: true,
             });
 
         expect(response.status).toBe(400);
@@ -138,7 +138,7 @@ describe('PUT /api/products/:id', () => {
         const response = await request(server).put('/api/products/1').send({
             name: 'Monitor Curvo Actualizado',
             price: -350,
-            availability: false,
+            availability: true,
         });
 
         expect(response.status).toBe(400);
@@ -158,7 +158,7 @@ describe('PUT /api/products/:id', () => {
             .send({
                 name: 'Monitor Curvo Actualizado',
                 price: 350,
-                availability: false,
+                availability: true,
             });
 
         expect(response.status).toBe(404);
@@ -172,7 +172,7 @@ describe('PUT /api/products/:id', () => {
         const response = await request(server).put(`/api/products/1`).send({
             name: 'Monitor Curvo Actualizado',
             price: 350,
-            availability: false,
+            availability: true,
         });
 
         expect(response.status).toBe(200);
