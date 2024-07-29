@@ -3,7 +3,7 @@ import colors from 'colors';
 import swaggerUi from 'swagger-ui-express';
 import router from './router';
 import db from './config/db';
-import swaggerSpec from './config/swagger';
+import swaggerSpec, { SwaggerUiOptions } from './config/swagger';
 
 export async function connectDB() {
     try {
@@ -28,6 +28,10 @@ server.use(express.json());
 
 server.use('/api/products', router);
 
-server.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+server.use(
+    '/docs',
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec, SwaggerUiOptions)
+);
 
 export default server;
