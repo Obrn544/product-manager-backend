@@ -1,10 +1,11 @@
 import express from 'express';
 import colors from 'colors';
 import swaggerUi from 'swagger-ui-express';
-import router from './router';
-import db from './config/db';
 import swaggerSpec, { SwaggerUiOptions } from './config/swagger';
 import cors, { CorsOptions } from 'cors';
+import morgan from 'morgan';
+import router from './router';
+import db from './config/db';
 
 export async function connectDB() {
     try {
@@ -40,6 +41,7 @@ server.use(cors(corsOptions));
 // read form data
 server.use(express.json());
 
+server.use(morgan('dev'));
 server.use('/api/products', router);
 
 server.use(
